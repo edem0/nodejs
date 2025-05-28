@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    box-shadow: 4px 0 10px rgba(0, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar h2 {
+    color: #0ff;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #0ff;
+}
+
+/* Menü gombok */
+.sidebar button.menu-btn {
+    background-color: transparent;
+    color: #0ff;
+    border: 1px solid #0ff;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.sidebar button.menu-btn:hover {
+    background-color: #0ff;
+    color: #121212;
+    box-shadow: 0 0 10px #0ff;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.content h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.lista {
+    background-color: #222;
+    padding: 20px;
+    margin: 15px 0;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+input[type="text"], select {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #333;
+    color: #0ff;
+    border: 1px solid #0ff;
+    border-radius: 4px;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+#message {
+    color: #ff5555;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Módosítás gomb */
+.modify {
+    background-color: #f0c330;
+    color: #121212;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 8px;
+}
+
+/* Törlés gomb blognál */
+.deleteButton {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effekt */
+.modify:hover {
+    background-color: #d4ac1f;
+}
+
+.deleteButton:hover {
+    background-color: #b92c37;
+}
+
+#felhasznalotorles {
+    background-color: #b92c37; /* kék */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 15px auto 0 auto;
+    text-align: center;
+    width: fit-content;
+}
+
+#letrehoz {
+    background-color: #21b34a; /* kék */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 15px auto 0 auto;
+    text-align: center;
+    width: fit-content;
+}
+
+/* Felhasználó mentése gomb */
+#submit {
+    background-color: #007bff; /* kék */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 15px auto 0 auto;
+    text-align: center;
+    width: fit-content;
+}
+
+#submit:hover {
+    background-color: #0056b3; /* sötétebb kék */
+}
+
+/* Felhasználó törlése gomb */
+button#deleteUserBtn, button#submitDeleteUser {
+    background-color: #dc3545; /* piros */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button#deleteUserBtn:hover, button#submitDeleteUser:hover {
+    background-color: #a71d2a; /* sötétebb piros */
+}
+
+/* Új kék, lekerekített, középre igazított gombok (kivéve blog törlés, mentés és menü) */
+button.rounded-blue {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 15px auto 0 auto;
+    text-align: center;
+    width: fit-content;
+}
+
+button.rounded-blue:hover {
+    background-color: #0056b3;
+}

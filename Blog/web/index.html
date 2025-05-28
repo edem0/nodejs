@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogkezelő rendszer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Menü</h2>
+            <button onclick="addUser()" class="menu-btn">➕ Új felhasználó</button>
+            <button onclick="updateUser()" class="menu-btn">🖋️ Felhasználó módosítás</button>
+            <button onclick="deleteUser()" class="menu-btn">❌ Felhasználó törlés</button>
+            <button onclick="addBlog()" class="menu-btn">📝 Új bejegyzés</button>
+            <button onclick="listBlogs()" class="menu-btn">📋 Bejegyzések listája</button>
+        </aside>
+        <main class="content">
+            <h1>Blogkezelő</h1>
+            <div id="tartalom" class="animate-fade"></div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
