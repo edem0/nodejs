@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice Management</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>Invoice App</h2>
+      <nav>
+        <button data-page="customers">Customer Management</button>
+        <button data-page="issuers">Issuer Management</button>
+        <button data-page="new-invoice">New Invoice</button>
+        <button data-page="edit-invoice">Edit/Delete Invoice</button>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <section id="customers" class="page active">
+        <h1>Customer Management</h1>
+        <form id="customer-form">
+          <input type="text" placeholder="Customer Name" name="name" required />
+          <input type="text" placeholder="Customer Address" name="address" required />
+          <button type="submit">Add / Update Customer</button>
+        </form>
+        <ul id="customer-list"></ul>
+      </section>
+
+      <section id="issuers" class="page hidden">
+        <h1>Issuer Management</h1>
+        <form id="issuer-form">
+          <input type="text" placeholder="Issuer Name" name="name" required />
+          <input type="text" placeholder="Issuer Address" name="address" required />
+          <input type="text" placeholder="Issuer Tax Number" name="taxNumber" required />
+
+          <button type="submit">Add / Update Issuer</button>
+        </form>
+        <ul id="issuer-list"></ul>
+      </section>
+
+      <section id="new-invoice" class="page hidden">
+        <h1>New Invoice</h1>
+        <form id="invoice-form">
+          <div>
+            <label for="invoiceNumber">Invoice Number</label>
+            <input type="number" id="invoiceNumber" name="invoiceNumber" required />
+          </div>
+          <div>
+            <label for="fulfilled">Fulfilled Date</label>
+            <input type="date" id="fulfilled" name="fulfilled" required />
+          </div>
+          <div>
+            <label for="deadline">Deadline Date</label>
+            <input type="date" id="deadline" name="deadline" required />
+          </div>
+          <div>
+            <label for="total">Total</label>
+            <input type="number" id="total" name="total" required />
+          </div>
+          <div>
+            <label for="vat">VAT %</label>
+            <input type="number" id="vat" name="vat" required />
+          </div>
+          <div>
+            <label for="customer-select">Customer</label>
+            <select name="customerId" id="customer-select" required></select>
+          </div>
+          <div>
+            <label for="issuer-select">Issuer</label>
+            <select name="issuerId" id="issuer-select" required></select>
+          </div>
+          <button type="submit">Save Invoice</button>
+        </form>
+      </section>
+
+      <section id="edit-invoice" class="page hidden">
+        <h1>Edit/Delete Invoice</h1>
+
+        <div id="invoice-edit-form-container" class="hidden">
+          <h2>Edit Invoice</h2>
+          <form id="invoice-edit-form">
+            <div>
+              <label for="editInvoiceNumber">Invoice Number</label>
+              <input id="editInvoiceNumber" name="invoiceNumber" type="number" required />
+            </div>
+            <div>
+              <label for="editCreated">Created</label>
+              <input id="editCreated" type="date" name="created" disabled />
+            </div>
+            <div>
+              <label for="editFulfilled">Fulfilled</label>
+              <input id="editFulfilled" name="fulfilled" type="date" required />
+            </div>
+            <div>
+              <label for="editDeadline">Deadline</label>
+              <input id="editDeadline" name="deadline" type="date" required />
+            </div>
+            <div>
+              <label for="editTotal">Total</label>
+              <input id="editTotal" name="total" type="number" required />
+            </div>
+            <div>
+              <label for="editVat">VAT (%)</label>
+              <input id="editVat" name="vat" type="number" required />
+            </div>
+            <div>
+              <label for="editCustomer">Customer</label>
+              <select id="editCustomer" name="customerId" required></select>
+            </div>
+            <div>
+              <label for="editIssuer">Issuer</label>
+              <select id="editIssuer" name="issuerId" required></select>
+            </div>
+            <button type="submit">Save Changes</button>
+            <button type="button" id="cancel-edit">Cancel</button>
+          </form>
+        </div>
+
+        <ul id="invoice-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
