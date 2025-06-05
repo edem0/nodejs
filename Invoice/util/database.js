@@ -111,10 +111,6 @@ export const deleteInvoice = (id) => db
 
 
 
-
-
-// Seeding data
-
 // const customers = [
 //   { name: 'Peter', address: '123 Elm Street' },
 //   { name: 'John', address: '456 Oak Avenue' },
@@ -154,7 +150,7 @@ export const deleteInvoice = (id) => db
 //     const fulfilled = getRandomDate();
 //     const deadline = getRandomDate();
 
-//     const total = Math.floor(Math.random() * 1000) + 100;
+//     const total = Math.floor(Math.random() * 10000) + 2000;
 //     const vat = Math.floor(total * 0.2);
 
 //     saveInvoice(

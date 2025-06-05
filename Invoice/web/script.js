@@ -53,8 +53,10 @@ function createCustomerItem(customer) {
   deleteBtn.className = "delete";
   deleteBtn.textContent = "Delete";
   deleteBtn.onclick = async () => {
+    if (!confirm(`Warning! Deleting customer "${customer.name}" will storno all related invoices. Proceed?`)) return;
     await fetch(`${API}/customers/${customer.id}`, { method: "DELETE" });
     fetchAndRender(`${API}/customers`, "customer-list", createCustomerItem);
+    //STORNO RELATED INVOICES
   };
 
   actions.append(editBtn, deleteBtn);
@@ -91,8 +93,10 @@ function createIssuerItem(issuer) {
   deleteBtn.className = "delete";
   deleteBtn.textContent = "Delete";
   deleteBtn.onclick = async () => {
+    if (!confirm(`Warning! Deleting issuer "${customer.name}" will storno all related invoices. Proceed?`)) return;
     await fetch(`${API}/issuers/${issuer.id}`, { method: "DELETE" });
     fetchAndRender(`${API}/issuers`, "issuer-list", createIssuerItem);
+    //STORNO RELATED INVOICES
   };
 
   actions.append(editBtn, deleteBtn);
@@ -218,6 +222,14 @@ function createInvoiceItem(invoice) {
   editBtn.className = "edit";
   editBtn.textContent = "Edit";
   editBtn.onclick = () => onEditInvoice(invoice);
+
+  // const stornoBtn = document.createElement("button");
+  // editBtn.className = "storno";
+  // editBtn.textContent = "Storno";
+  // editBtn.onclick = () => {
+  //   if (!confirm(`Storno invoice #${invoice.invoiceNumber}?`)) return;                     STORNO FUNCTION
+  //   onStornoInvoice(invoice); 
+  // }
 
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "delete";
